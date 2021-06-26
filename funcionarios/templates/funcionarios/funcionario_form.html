@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block main %}
+    
+    Edite | Criar
+    <form method="POST"> {% csrf_token %}
+
+        {{ form|bootstrap }}
+
+        <button type="submit"> Salvar</button>
+    </form>
+
+{% endblock %}
