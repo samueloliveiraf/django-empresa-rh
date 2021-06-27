@@ -1,5 +1,4 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView
 from .models import Empresa
 
