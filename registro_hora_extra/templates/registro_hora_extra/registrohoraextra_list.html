@@ -1,27 +1,36 @@
-
 {% extends 'base.html' %}
 
 {% block main %}
-    
+
+<div style="margin-top: 20px;">
+    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+
+    <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
+    </a>
+</div>
+
+<h3 style="text-transform: uppercase;" class="div-container">
     Banco de Horas
-    <br>
-    {% for registro_re in object_list %}
-        {{ registro_re }} {{ registro_re.hora }} {{ registro_re.funcionario.nome }}
-        <a href="{% url 'update_hora_extra' registro_re.id %}">
+</h3>
+
+{% for registro_re in object_list %}
+
+<li class="div-container">
+    {{ registro_re }} {{ registro_re.hora }} {{ registro_re.funcionario.nome }}
+    <a class="btn btn-dark" style="margin-left: 20px;" href="{% url 'update_hora_extra' registro_re.id %}">
         Editar
-        </a>
-        |
-        <a href="{% url 'delete_hora_extra' registro_re.id %}">
-            Deletar
-        </a>
-       <br>
-    {% endfor %}
+    </a>
+    <a class="btn btn-dark" href="{% url 'delete_hora_extra' registro_re.id %}">
+        Deletar
+    </a>
+</li>
 
-    {% if not object_list %}
-        <h4>Não existe registro de horas no banco de Dados</h4>
-    {% endif %}
+{% endfor %}
 
-    <a href="{% url 'creat_hora_extra' %}" 
-    class="btn btn-info">Cadastar Horas</a>
+{% if not object_list %}
+<h4>Não existe registro de horas no banco de Dados</h4>
+{% endif %}
+
+<a href="{% url 'creat_hora_extra' %}" class="btn btn-dark">Cadastar Horas</a>
 
 {% endblock %}

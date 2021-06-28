@@ -1,22 +1,31 @@
-
 {% extends 'base.html' %}
 
 {% block main %}
-    
-    List
-    <br>
-    {% for funcionario in object_list %}
-        {{ funcionario }}
-        <a href="{% url 'update_funcionario' funcionario.id %}">
-          Editar
-        </a>  |
-        <a href="{% url 'delete_funcionario' funcionario.id %}">
-            Deletar
-        </a>
-        <br>
-    {% endfor %}
 
-    <a href="{% url 'creat_funcionario' %}" 
-        class="btn btn-info">Novo Funcionario</a>
+<div style="margin-top: 20px;">
+    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+
+    <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
+    </a>
+</div>
+
+<h3 style="text-transform: uppercase;" class="div-container">Listagem de Funcionarios</h3>
+
+{% for funcionario in object_list %}
+<li class="div-container">
+
+    {{ funcionario }}
+
+    <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'update_funcionario' funcionario.id %}">
+        Editar
+    </a>
+    <a class="btn btn-dark" href="{% url 'delete_funcionario' funcionario.id %}">
+        Deletar
+    </a>
+
+</li>
+{% endfor %}
+
+<a href="{% url 'creat_funcionario' %}" class="btn btn-dark">Cadastrar Funcionario</a>
 
 {% endblock %}

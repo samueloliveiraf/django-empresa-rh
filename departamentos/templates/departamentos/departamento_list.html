@@ -2,21 +2,30 @@
 
 {% block main %}
 
-    List Departamentos
-    <br>
-    {% for departamento in object_list %}
+<div style="margin-top: 20px;">
+    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+
+    <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
+    </a>
+</div>
+
+<h3 style="text-transform: uppercase;" class="div-container">Listagem de Departamentos</h3>
+
+{% for departamento in object_list %}
+<li class="div-container">
     {{ departamento }}
-    <a href="{% url 'update_departamento' departamento.id %}">
-       Editar
-    </a> |
-    <a href="{% url 'delete_departamento' departamento.id %}">
+    <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'update_departamento' departamento.id %}">
+        Editar
+    </a>
+    <a class="btn btn-dark" href="{% url 'delete_departamento' departamento.id %}">
         Deletar
     </a>
-    <br>
-    {% endfor %}
+</li>
 
-    <a href="{% url 'create_departamento' %}" class="btn btn-info">
-        Novo Departamento
-    </a>
+{% endfor %}
+
+<a style="margin-bottom: 30px;" href="{% url 'create_departamento' %}" class="btn btn-dark">
+    Novo Departamento
+</a>
 
 {% endblock %}

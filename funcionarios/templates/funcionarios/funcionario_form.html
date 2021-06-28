@@ -4,6 +4,15 @@
 
 {% block main %}
 
+    <div style="margin-top: 20px;">
+        <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+
+        <a class="btn btn-dark" 
+            href="{% url 'logout' %}">SAIR
+        </a>
+    </div>
+    
+
     <form method="POST"> {% csrf_token %}
 
         {{ form|bootstrap }}
@@ -36,7 +45,8 @@
             <ul>
                 <li>
                     {{ registro_hora.motivo }} | {{ registro_hora.hora }} H
-                    <a href="{% url 'update_hora_extra' registro_hora.id %}">Editar Horas</a>
+                    <a style="margin-left: 20px;"  class="btn btn-dark" 
+                    href="{% url 'update_hora_extra' registro_hora.id %}">Editar Horas</a>
                 </li>
             </ul>
     

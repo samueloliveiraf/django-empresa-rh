@@ -1,15 +1,23 @@
-
 {% extends 'base.html' %}
 
 {% load bootstrap %}
 
 {% block main %}
 
-    <form method="POST"> {% csrf_token %}
+<div style="margin-top: 20px;">
+    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
 
-        {{ form|bootstrap }}
+    <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
+    </a>
+</div>
 
-        <button type="submit"> Salvar</button>
-    </form>
+<h3 style="text-transform: uppercase;" class="div-container">Casdatrar novo Departamento</h3>
+
+<form method="POST"> {% csrf_token %}
+
+    {{ form|bootstrap }}
+
+    <button style="margin-top: 20px;" class="btn btn-dark" type="submit"> Salvar</button>
+</form>
 
 {% endblock %}

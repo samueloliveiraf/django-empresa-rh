@@ -6,9 +6,16 @@
 
 {{ form.errors }}
 
+<div style="margin-top: 20px;">
+    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+
+    <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
+    </a>
+</div>
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|bootstrap }}
-    <button type="submit">Adicionar</button>
+    <button style="margin-top: 20px;" class="btn btn-dark" type="submit">Adicionar</button>
 </form>
 {% endblock %}

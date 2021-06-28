@@ -3,10 +3,13 @@
 
 {% block main %}
     
-    Deletar Horas
+    <h3 style="text-transform: uppercase;" class="div-container">
+        Deletar HOras
+    </h3>    
+
     <form method="POST"> {% csrf_token %}
 
-        <h1>Tem certeza que deseja Deletar essas Horas?{{ obj }}</h1>
+        <h2>Tem certeza que deseja Deletar essas Horas?{{ obj }}</h2>
         {{ form }}
 
         <button type="submit" class="btn btn-danger">Confimar</button>

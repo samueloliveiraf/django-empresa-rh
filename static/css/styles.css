@@ -10,10 +10,29 @@ form {
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px #e8e8e8;
     margin-top: 30px;
+    align-items: center;
+}
+
+.register-form {
+    display: inline-grid;
+    margin-top: 90px;
+}
+
+.register-button {
+    margin-top: 20px;
+    width: 200px;
+}
+
+.container-login {
+    margin-top: 200px;
 }
 
 .btn-style {
     margin-top: 20px;
+}
+
+.form-login {
+    text-align: center;
 }
 
 .container {
@@ -35,4 +54,7 @@ a {
     font-size: 18px;
 }
 
+nav {
+    border-radius: 10px;
+}
 

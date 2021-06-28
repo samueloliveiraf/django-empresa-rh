@@ -31,8 +31,9 @@ class FuncionarioCreate(CreateView):
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)
-        username = funcionario.nome.split(' ')[0] + funcionario.nome.split(' ')[1]
+        username = funcionario.nome
         funcionario.empresa = self.request.user.funcionario.empresa
-        funcionario.user = User.objects.create()
+        funcionario.user = User.objects.create(username=username)
         funcionario.save()
         return super(FuncionarioCreate, self).form_valid(form)
+

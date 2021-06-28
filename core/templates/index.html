@@ -1,72 +1,65 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
 {% load bootstrap %}
 
-<!DOCTYPE html>
+{% block main %}
 
-<html lang="en">
+<div style="margin-top: 20px;">
+    <a class="btn btn-dark" href="{% url 'logout' %}">
+        SAIR
+    </a>
+    {% if usuario.funcionario.empresa %}
+        <a class="btn btn-dark"
+            href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">
+            Editar Empresa
+        </a>
+    {% else %}
+        <a style="margin-left: 243px; margin-top: 20px;" class="btn btn-dark" href="{% url 'create_empresa' %}">
+            Criar Empresa
+        </a>
+    {% endif %}
+</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="row">
+    <div class="col">
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <h4 class="div-container"> ADMIN: {{ usuario.funcionario.nome }} </h4>
 
-    <link rel="stylesheet" href="{% static 'css/styles-home.css' %}">
+        <div class="col">
+            <h4 class="div-container">
+                EMPRESA: {{ usuario.funcionario.empresa.nome }}
+            </h4>
 
-    <title>Gerenciamento RH</title>
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Sair</a>
-                </li>
-
-            </ul>
         </div>
-    </nav>
-    <div class="container">
 
-        <div class="row">
-            <div class="col-4">
-
-                Seja bem vindo! {{ usuario.funcionario.nome }}
-                <li>
-                    <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a>
-                </li>
-                <li>
-                    <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
-                </li>
-                <li>
-                    <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a>
-                </li>
-
-            </div>
-            <div class="col-4">
-                Clooo
-            </div>
-
-            <div class="col-4">
-                {% if usuario.funcionario.empresa %}
-                    <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">
-                    Editar Empresa</a>
-                {% else %}
-                    <a href="{% url 'create_empresa' %}">Criar Empresa</a>
-                {% endif %}
-            </div>
-        </div>
+        <h6 style="text-transform: uppercase;">
+            <li class="div-container">
+                Gerenciar Funcionarios
+                <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'list_funcionarios' %}">
+                    GERENCIAR
+                </a>
+            </li>
+        </h6>
+        <h6 style="text-transform: uppercase;">
+            <li class="div-container">
+                Gerenciar Departamentos
+                <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'list_departamentos' %}">
+                    GERENCIAR
+                </a>
+            </li>
+        </h6>
+        <h6 style="text-transform: uppercase;">
+            <li class="div-container">
+                Gerenciar Banco de Horas
+                <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'list_hora_extra' %}">
+                    GERENCIAR
+                </a>
+            </li>
+        </h6>
     </div>
 
-</body>
+</div>
 
-</html>
+{% endblock %}

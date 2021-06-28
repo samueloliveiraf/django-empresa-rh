@@ -4,9 +4,18 @@
 
 {% block main %}
 
-    <form method="post">{% csrf_token %}
-        {{ form|bootstrap }}
-        <button class="btn btn-info" type="submit"> Login</button>
-    </form>
+    <div class="container-login">
+        <form method="post" class="form-login">{% csrf_token %}
+            {{ form|bootstrap }}
+            <button style="width: 180px;" class="btn btn-dark btn-style" type="submit">
+                Entrar
+            </button>
+        </form>
+       
+    </div>
+
+    <a style="margin-top: 30px; margin-left: 260px;" class="btn btn-dark" href="{% url 'signup' %}">
+        CADASTRAR-SE
+    </a>
 
 {% endblock %}

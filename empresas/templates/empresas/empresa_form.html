@@ -4,11 +4,17 @@
 
 {% load bootstrap %}
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form|bootstrap }}
-        <button type="submit">Salvar</button>
-    </form>
+<div style="margin-top: 20px;">
+    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+
+    <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
+    </a>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button class="btn btn-dark" type="submit">Salvar</button>
+</form>
 
 {% endblock %}
- 
