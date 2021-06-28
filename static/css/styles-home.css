@@ -1,0 +1,16 @@
+
+body {
+    background: #EAEDF3;
+    font-family: Verdana, sans-serif;
+}
+
+nav {
+    padding: 200px;
+    display: flex;
+}
+
+ul {
+    margin-left: 820px;
+}
+
+

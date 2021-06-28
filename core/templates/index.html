@@ -1,25 +1,72 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block main %}
+{% load bootstrap %}
 
-    <div class="row">
-        <div class="col">
-            Column
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/styles-home.css' %}">
+
+    <title>Gerenciamento RH</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                </li>
+
+            </ul>
         </div>
-        <div class="col">
-            Seja bem vindo! {{ usuario.funcionario.nome }} <br>
-            <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a> <br>
-            <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
-        </div>
-        <div class="col">
-           {% if usuario.funcionario.empresa %}
-                <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">
+    </nav>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-4">
+
+                Seja bem vindo! {{ usuario.funcionario.nome }}
+                <li>
+                    <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a>
+                </li>
+                <li>
+                    <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
+                </li>
+                <li>
+                    <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a>
+                </li>
+
+            </div>
+            <div class="col-4">
+                Clooo
+            </div>
+
+            <div class="col-4">
+                {% if usuario.funcionario.empresa %}
+                    <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">
                     Editar Empresa</a>
-           {% else %}
-                <a href="{% url 'create_empresa' %}">Criar Empresa</a>
-           {% endif %}
-           <a href="{% url 'logout' %}">Sair</a>
+                {% else %}
+                    <a href="{% url 'create_empresa' %}">Criar Empresa</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 
-{% endblock %}
+</body>
+
+</html>

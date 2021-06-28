@@ -1,0 +1,38 @@
+
+body {
+    background: #EAEDF3;
+    font-family: Verdana, sans-serif;
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px #e8e8e8;
+    margin-top: 30px;
+}
+
+.btn-style {
+    margin-top: 20px;
+}
+
+.container {
+    width: 700px;
+}
+
+.div-container {
+    background: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px #e8e8e8;
+    width: 675px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+

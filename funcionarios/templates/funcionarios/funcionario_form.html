@@ -4,25 +4,49 @@
 
 {% block main %}
 
-Edite | Criar
-
     <form method="POST"> {% csrf_token %}
 
         {{ form|bootstrap }}
 
-        <button type="submit"> Salvar</button>
+        <button class="btn btn-dark btn-style" type="submit"> Salvar</button>
     </form>
 
-    {% if object %}
-    <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
-        Adicionar documento
-    </a>
-    {% endif %}
+    <div class="container div-container">
+        <h4>Documentos</h4>
+        {% for documento in object.documento_set.all %}
+            <ul>
+                <li>
+                    <a href="{{ documento.arquivo.url }} "> {{ documento.nome }}  </a>
+                </li>
+            </ul>
+    
+         {% endfor %}
 
-    {% for documento in object.documento_set.all %}
-    <li>
-        <a href="{{ documento.arquivo.url }} "> {{ documento.nome }}  </a><br>
-    </li>
-    {% endfor %}
+        {% if object %}
+        <a href="{% url 'create_documento' object.id %}" class="btn btn btn-dark">
+            Adicionar documento
+        </a>
+        {% endif %}
+    </div>
+       
+
+    <div class="container div-container">
+        <h4>Banco de Horas</h4>
+        {% for registro_hora in object.registrohoraextra_set.all %}
+            <ul>
+                <li>
+                    {{ registro_hora.motivo }} | {{ registro_hora.hora }} H
+                    <a href="{% url 'update_hora_extra' registro_hora.id %}">Editar Horas</a>
+                </li>
+            </ul>
+    
+         {% endfor %}
+    </div>
+
+    <div class="container div-container">
+        <h4>Total de horas extras: {{ object.total_horas_extra }} </h4>
+    </div>
+
+      
 
 {% endblock %}

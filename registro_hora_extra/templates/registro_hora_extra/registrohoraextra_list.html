@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block main %}
+    
+    Banco de Horas
+    <br>
+    {% for registro_re in object_list %}
+        {{ registro_re }} {{ registro_re.hora }} {{ registro_re.funcionario.nome }}
+        <a href="{% url 'update_hora_extra' registro_re.id %}">
+        Editar
+        </a>
+        |
+        <a href="{% url 'delete_hora_extra' registro_re.id %}">
+            Deletar
+        </a>
+       <br>
+    {% endfor %}
+
+    {% if not object_list %}
+        <h4>Não existe registro de horas no banco de Dados</h4>
+    {% endif %}
+
+    <a href="{% url 'creat_hora_extra' %}" 
+    class="btn btn-info">Cadastar Horas</a>
+
+{% endblock %}
