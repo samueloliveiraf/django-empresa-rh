@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import conf, path, include
+from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 from core import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +28,7 @@ urlpatterns = [
     path('departamentos/', include('departamentos.urls')),
     path('empresas/', include('empresas.urls')),
     path('documentos/', include('documentos.urls')),
+    path('clientes/', include('clientes.urls')),
     path('horas-extras', include('registro_hora_extra.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.SignUp.as_view(), name="signup"),
