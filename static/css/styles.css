@@ -1,7 +1,9 @@
 
 body {
     background: #EAEDF3;
-    font-family: Verdana, sans-serif;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 form {
@@ -56,5 +58,26 @@ a {
 
 nav {
     border-radius: 10px;
+}
+
+.change-class {
+    margin-left: 20px; 
+    color: #1b1b1b;
+}
+
+.danger:hover {
+    color: rgb(168, 30, 30);
+}
+
+.edit:hover {
+    color: rgb(40, 40, 121);
+}
+
+.btn:hover {
+    color: rgb(133, 133, 133);
+}
+
+.text-h3 {
+    text-transform: uppercase;
 }
 

@@ -5,7 +5,9 @@
 {% block main %}
 
     <div class="container-login">
+        
         <form method="post" class="form-login">{% csrf_token %}
+            <i class="fas fa-users fa-2x"></i>
             {{ form|bootstrap }}
             <button style="width: 180px;" class="btn btn-dark btn-style" type="submit">
                 Entrar
@@ -14,7 +16,7 @@
        
     </div>
 
-    <a style="margin-top: 30px; margin-left: 260px;" class="btn btn-dark" href="{% url 'signup' %}">
+    <a style="margin-top: 30px; margin-left: 265px;" class="btn btn-dark" href="{% url 'signup' %}">
         CADASTRAR-SE
     </a>
 

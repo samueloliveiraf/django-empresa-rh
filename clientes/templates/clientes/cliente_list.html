@@ -9,15 +9,26 @@
     </a>
 </div>
 
+    <h3 class="div-container text-h3">Listagem de Clientes</h3>
+
     {% for cliente in object_list %}
     <li class="div-container">
 
         {{ cliente }}
-        <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'update_cliente' cliente.id %}">
-            Editar
+        <a  class="change-class edit" href="{% url 'update_cliente' cliente.id %}">
+            <i class="fas fa-user-edit fa-lg"></i> Editar
+        </a>
+
+        <a class="change-class danger" href="{% url 'delete_cliente' cliente.id %}">
+            <i class="fas fa-trash fa-lg"></i> Deletar
         </a>
 
     </li>
     {% endfor %}
+
+    <a class="btn btn-dark" href="{% url 'creat_cliente' %}">
+        Cadastrar Cliente
+    </a>
+
 
 {% endblock %}

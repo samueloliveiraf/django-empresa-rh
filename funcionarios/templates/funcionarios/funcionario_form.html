@@ -25,7 +25,7 @@
         {% for documento in object.documento_set.all %}
             <ul>
                 <li>
-                    <a href="{{ documento.arquivo.url }} "> {{ documento.nome }}  </a>
+                    <a class="change-class edit" href="{{ documento.arquivo.url }} "> {{ documento.nome }}  </a>
                 </li>
             </ul>
     
@@ -44,13 +44,20 @@
         {% for registro_hora in object.registrohoraextra_set.all %}
             <ul>
                 <li>
-                    {{ registro_hora.motivo }} | {{ registro_hora.hora }} H
-                    <a style="margin-left: 20px;"  class="btn btn-dark" 
-                    href="{% url 'update_hora_extra' registro_hora.id %}">Editar Horas</a>
+                    {{ registro_hora.motivo }} | {{ registro_hora.hora }} H 
+                    <a class="change-class edit" style="margin-left: 20px;" 
+                        href="{% url 'update_hora_extra' registro_hora.id %}">  
+                        <i class="fas fa-business-time fa-lg"></i>
+                        Editar Horas
+                    </a>
                 </li>
             </ul>
     
          {% endfor %}
+    </div>
+
+    <div class="container div-container">
+        <h4>Salario: {{ funcionario.salario }} </h4>
     </div>
 
     <div class="container div-container">

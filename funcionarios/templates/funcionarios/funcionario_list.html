@@ -9,18 +9,18 @@
     </a>
 </div>
 
-<h3 style="text-transform: uppercase;" class="div-container">Listagem de Funcionarios</h3>
+<h3 class="div-container text-h3">Listagem de Funcionarios</h3>
 
 {% for funcionario in object_list %}
 <li class="div-container">
 
     {{ funcionario }}
 
-    <a style="margin-left: 20px;" class="btn btn-dark" href="{% url 'update_funcionario' funcionario.id %}">
-        Editar
+    <a class="change-class edit" href="{% url 'update_funcionario' funcionario.id %}">
+        <i class="fas fa-user-edit fa-lg"></i> Editar
     </a>
-    <a class="btn btn-dark" href="{% url 'delete_funcionario' funcionario.id %}">
-        Deletar
+    <a class="change-class danger" href="{% url 'delete_funcionario' funcionario.id %}">
+        <i class="fas fa-trash fa-lg"></i> Deletar
     </a>
 
 </li>

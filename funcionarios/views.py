@@ -15,7 +15,7 @@ class FuncionariosList(ListView):
 
 class FuncionarioEdit(UpdateView):
     model = Funcionario
-    fields = ['nome', 'departamentos']
+    fields = ['nome', 'departamentos', 'salario']
 
 
 class FuncionarioDelete(DeleteView):
@@ -25,7 +25,7 @@ class FuncionarioDelete(DeleteView):
 
 class FuncionarioCreate(CreateView):
     model = Funcionario
-    fields = ['nome', 'departamentos']
+    fields = ['nome', 'salario', 'departamentos']
     success_url = reverse_lazy('list_funcionarios')
 
 
