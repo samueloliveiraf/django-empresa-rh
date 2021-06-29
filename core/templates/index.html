@@ -6,8 +6,8 @@
 
 {% block main %}
 
-<div style="margin-top: 20px;">
-    <a class="btn btn-dark" href="{% url 'logout' %}">
+<div class="margin-top">
+    <a class="btn btn-dark margin-right" href="{% url 'logout' %}">
         SAIR
     </a>
     {% if usuario.funcionario.empresa %}
@@ -16,7 +16,7 @@
             Editar Empresa
         </a>
     {% else %}
-        <a style="margin-left: 243px; margin-top: 20px;" class="btn btn-dark" href="{% url 'create_empresa' %}">
+        <a class="btn btn-dark" href="{% url 'create_empresa' %}">
             Criar Empresa
         </a>
     {% endif %}

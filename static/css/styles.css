@@ -18,6 +18,9 @@ form {
 .register-form {
     display: inline-grid;
     margin-top: 90px;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 90px;
 }
 
 .register-button {
@@ -79,5 +82,13 @@ nav {
 
 .text-h3 {
     text-transform: uppercase;
+}
+
+.margin-right {
+    margin-right: 20px;
+}
+
+.margin-top {
+    margin-top: 20px;
 }
 

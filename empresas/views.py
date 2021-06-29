@@ -1,6 +1,7 @@
-from django.http.response import HttpResponse
+
 from django.views.generic.edit import CreateView, UpdateView
 from .models import Empresa
+from django.urls import reverse
 
 
 class EmpresaCreate(CreateView):
@@ -12,7 +13,7 @@ class EmpresaCreate(CreateView):
         funcionario = self.request.user.funcionario
         funcionario.empresa = obj
         funcionario.save()
-        return HttpResponse('OK')
+        return reverse('home')
 
 class EmpresaEdit(UpdateView):
     model = Empresa

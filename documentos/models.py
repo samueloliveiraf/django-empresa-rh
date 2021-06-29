@@ -7,7 +7,7 @@ from funcionarios.models import Funcionario
 
 class Documento(models.Model):
     nome = models.CharField(max_length=100)
-    pertence = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
+    pertence = models.ForeignKey(Funcionario, on_delete=models.CASCADE)
     arquivo = models.FileField(upload_to='documentos')
 
     def get_absolute_url(self):

@@ -2,14 +2,14 @@
 
 {% block main %}
 
-<div style="margin-top: 20px;">
-    <a style="margin-right: 20px;" class="btn btn-dark" href="{% url 'home' %}">VOLTAR</a>
+<div class="margin-top">
+    <a class="btn btn-dark margin-right" href="{% url 'home' %}">VOLTAR</a>
 
     <a class="btn btn-dark" href="{% url 'logout' %}">SAIR
     </a>
 </div>
 
-<h3 style="text-transform: uppercase;" class="div-container">Listagem de Departamentos</h3>
+<h3 class="div-container text-h3">Listagem de Departamentos</h3>
 
 {% for departamento in object_list %}
 <li class="div-container">
