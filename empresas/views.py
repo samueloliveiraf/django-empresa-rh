@@ -1,7 +1,8 @@
 
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView, UpdateView
 from .models import Empresa
-from django.urls import reverse
+from django.urls import reverse_lazy
 
 
 class EmpresaCreate(CreateView):
@@ -13,7 +14,9 @@ class EmpresaCreate(CreateView):
         funcionario = self.request.user.funcionario
         funcionario.empresa = obj
         funcionario.save()
-        return reverse('home')
+        url = reverse_lazy('home')
+        return HttpResponseRedirect(url)
+    
 
 class EmpresaEdit(UpdateView):
     model = Empresa
