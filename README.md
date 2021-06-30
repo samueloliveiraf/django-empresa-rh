@@ -22,9 +22,11 @@ comando 6º -> python manage.py makemigrations
 
 comando 7º -> python manage.py migrate
 
+comando 8º -> python manage.py createsuperuser
+
 Em sequida só rodar o projeto com
 
-comando 8º -> python manage.py runserver
+comando 9º -> python manage.py runserver
 
 E acessar a url: https://localhost:8000
 
