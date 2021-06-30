@@ -30,3 +30,8 @@ comando 9º -> python manage.py runserver
 
 E acessar a url: https://localhost:8000
 
+
+
+https://user-images.githubusercontent.com/44476076/123887539-16d66280-d928-11eb-8617-10b0cebdec42.mp4
+
+
